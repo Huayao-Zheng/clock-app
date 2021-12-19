@@ -1,0 +1,20 @@
+@use 'variables' as var;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    color: var.$white;
+}
+
+body {
+    min-height: 100vh;
+}
