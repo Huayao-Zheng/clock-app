@@ -1,0 +1,21 @@
+.quote {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.97rem 1.625rem 1.625rem 1.625rem;
+    font-size: 12px;
+    line-height: 22px;
+
+    blockquote {
+        padding-right: 1rem;
+    }
+
+    p {
+    }
+
+    cite {
+    }
+
+    &__refresh {
+        cursor: pointer;
+    }
+}

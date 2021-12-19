@@ -1,10 +1,10 @@
 import React from 'react';
-import Quote from './Components/Quote';
+import Layout from './Layouts/Layout';
 
 const App = () => {
     return (
         <>
-            <Quote />
+            <Layout />
         </>
     );
 };
