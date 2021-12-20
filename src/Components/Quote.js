@@ -1,23 +1,23 @@
 import React from 'react';
-
 import './Quote.Style.scss';
-
 import refresh from '../Assets/desktop/icon-refresh.svg';
+import useQuote from '../Hooks/useQuote';
 
 const Quote = () => {
+    const { quote, fetchQuote } = useQuote();
+
     return (
         <div className="quote">
             <blockquote>
-                <p>
-                    “The science of operations, as derived from mathematics more especially, is a science of itself, and
-                    has its own abstract truth and value.”
+                <p className="quote__body" alt="Random Quote">
+                    “{quote.en}”
                 </p>
                 <footer>
-                    <cite>Ada Lovelace</cite>
+                    <cite className="quote__author">{quote.author}</cite>
                 </footer>
             </blockquote>
 
-            <img className="quote__refresh" src={refresh} alt="refresh"></img>
+            <img onClick={fetchQuote} className="quote__refresh" src={refresh} alt="refresh" />
         </div>
     );
 };
