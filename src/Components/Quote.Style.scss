@@ -43,5 +43,15 @@
         @include breakpoint-up(medium) {
             padding-top: 1rem;
         }
+
+        &[spin='1'] {
+            animation: spin 1s;
+        }
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
     }
 }

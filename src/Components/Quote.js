@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Quote.Style.scss';
 import refresh from '../Assets/desktop/icon-refresh.svg';
 import useQuote from '../Hooks/useQuote';
 
 const Quote = () => {
     const { quote, fetchQuote } = useQuote();
+    const [spin, setSpin] = useState(1);
+
+    const onClickEvents = () => {
+        fetchQuote();
+        setSpin(1);
+    };
 
     return (
         <div className="quote">
@@ -17,7 +23,14 @@ const Quote = () => {
                 </footer>
             </blockquote>
 
-            <img onClick={fetchQuote} className="quote__refresh" src={refresh} alt="refresh" />
+            <img
+                onClick={onClickEvents}
+                onAnimationEnd={() => setSpin(0)}
+                className="quote__refresh"
+                src={refresh}
+                alt="refresh"
+                spin={spin}
+            />
         </div>
     );
 };

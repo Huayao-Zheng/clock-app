@@ -2,8 +2,16 @@ import React from 'react';
 import './WorldTime.Style.scss';
 // import Sun from '../Assets/desktop/icon-sun.svg';
 import Moon from '../Assets/desktop/icon-moon.svg';
+import useWolrdTime from '../Hooks/useWolrdTime';
+import Spinner from './Spinner';
 
 const WorldTime = () => {
+    const { worldTime } = useWolrdTime();
+
+    console.log(worldTime);
+
+    if (worldTime === null) return <Spinner />;
+
     return (
         <section className="world-time">
             <p className="world-time__greeting">
