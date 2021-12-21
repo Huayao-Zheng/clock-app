@@ -4,11 +4,11 @@ import './WorldTime.Style.scss';
 import Moon from '../Assets/desktop/icon-moon.svg';
 import useWolrdTime from '../Hooks/useWolrdTime';
 import Spinner from './Spinner';
+import useLocalTime from '../Hooks/useLocalTime';
 
 const WorldTime = () => {
     const { worldTime } = useWolrdTime();
-
-    console.log(worldTime);
+    const time = useLocalTime();
 
     if (worldTime === null) return <Spinner />;
 
@@ -18,13 +18,13 @@ const WorldTime = () => {
                 <img className="world-time__greeting-icon" src={Moon} alt="" />
                 GOOD EVENING
             </p>
-
             <div>
-                <span className="world-time__time">23:14</span>
-                <span className="world-time__time-zone">BST</span>
+                <span className="world-time__time">{time}</span>
+                <span className="world-time__time-zone-abbreviation">{worldTime.abbreviation}</span>
             </div>
-
-            <p className="world-time__location">IN LONDON, UK</p>
+            <p className="world-time__location">
+                IN {worldTime.region_name}, {worldTime.country_code}
+            </p>
         </section>
     );
 };

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Quote from '../Components/Quote';
 
 const API_KEY = process.env.REACT_APP_FREEGEOIP_API_KEY;
 const GEO_IP_URL = `https://api.freegeoip.app/json/?apikey=${API_KEY}`;
@@ -17,7 +16,6 @@ latitude	29.8737
 longitude	-97.9361
 metro_code	635
 */
-
 const WORLD_TIME_BY_IP_URL = 'http://worldtimeapi.org/api/ip';
 /**
 abbreviation	"CST"
@@ -40,10 +38,16 @@ const useWolrdTime = () => {
     const [worldTime, setWorldTime] = useState(null);
 
     const fetchWorldTime = async () => {
-        const { data } = await axios.get(WORLD_TIME_BY_IP_URL);
-
-        setWorldTime(data);
-        console.log(data);
+        try {
+            const promises = [axios.get(WORLD_TIME_BY_IP_URL), axios.get(GEO_IP_URL)];
+            const [p1, p2] = await Promise.all(promises);
+            setWorldTime({
+                ...p1.data,
+                ...p2.data,
+            });
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     useEffect(() => {
@@ -54,3 +58,5 @@ const useWolrdTime = () => {
 };
 
 export default useWolrdTime;
+
+// Be shown the correct greeting and background image based on the time of day they're visiting the site

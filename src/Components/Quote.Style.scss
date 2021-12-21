@@ -10,6 +10,7 @@
     max-width: 573px;
     margin: 0 1.625rem;
     padding-top: 1.97rem;
+    transition: 0.5s;
     @include breakpoint-up(medium) {
         font-size: 1.125rem;
         line-height: 1.75rem;
@@ -41,7 +42,7 @@
         cursor: pointer;
         opacity: 0.5;
         @include breakpoint-up(medium) {
-            padding-top: 1rem;
+            margin-top: 1rem;
         }
 
         &[spin='1'] {

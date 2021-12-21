@@ -5,11 +5,15 @@ const useQuote = () => {
     const [quote, setQuote] = useState({ en: '', author: '' });
 
     const fetchQuote = async () => {
-        const {
-            data: { en, author },
-        } = await axios.get('https://programming-quotes-api.herokuapp.com/Quotes/random');
+        try {
+            const {
+                data: { en, author },
+            } = await axios.get('https://programming-quotes-api.herokuapp.com/Quotes/random');
 
-        setQuote({ en, author });
+            setQuote({ en, author });
+        } catch (error) {
+            console.error(error);
+        }
     };
 
     useEffect(() => {
