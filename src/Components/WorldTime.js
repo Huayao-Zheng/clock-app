@@ -3,20 +3,8 @@ import './WorldTime.Style.scss';
 import Sun from '../Assets/desktop/icon-sun.svg';
 import Moon from '../Assets/desktop/icon-moon.svg';
 import Spinner from './Spinner';
-import useWolrdTime from '../Hooks/useWolrdTime';
-import useLocalTime from '../Hooks/useLocalTime';
 
-/**
- *  - [x]  - The sun icon and the daytime background image between 5am and 6pm
-    - [x]  - The moon icon and the nighttime background image between 6pm and 5am
-    - [x]  - "Good morning" between 5am and 12pm
-    - [x]  - "Good afternoon" between 12pm and 6pm
-    - [x]  - "Good evening" between 6pm and 5am
- */
-
-const WorldTime = () => {
-    const { worldTime } = useWolrdTime();
-    const { time, currentHours } = useLocalTime();
+const WorldTime = ({ worldTime, time, currentHours }) => {
     const isDaytime = currentHours >= 5 && currentHours < 18;
     const isMorning = currentHours >= 5 && currentHours < 12;
     const isAfternoon = currentHours >= 12 && currentHours < 18;

@@ -1,0 +1,46 @@
+.more-info {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 48px 26px;
+    transition: 0.5s;
+
+    & > * {
+        display: flex;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+
+    label {
+        font-size: 10px;
+        line-height: 28px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    &__detail {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: bold;
+    }
+}
+
+.more-info.active {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.day {
+    background: rgba(255, 255, 255, 0.75);
+    color: #303030;
+}
+
+.night {
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+}

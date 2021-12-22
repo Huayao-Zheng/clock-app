@@ -1,7 +1,15 @@
-main {
+.wrapper {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // transform: translateY(-50%);
+    transition: 0.5s;
+}
+
+.time-button-wrapper {
+    margin-top: auto;
+    margin-left: 25px;
+    margin-bottom: 40px;
+    transition: 0.5s;
 }
