@@ -2,24 +2,26 @@ import { useEffect, useState } from 'react';
 
 const currentTime = () => {
     const currTime = new Date();
-    const hours = `${currTime.getHours()}`;
-    const minutes = `${currTime.getMinutes()}`;
+    const hours = currTime.getHours();
+    const minutes = currTime.getMinutes();
 
-    return `${hours.length < 2 ? `${hours}0` : hours}:${minutes < 2 ? `${minutes}0` : minutes}`;
+    return `${hours <= 9 ? `0${hours}` : hours}:${minutes <= 9 ? `0${minutes}` : minutes}`;
 };
 
 const useLocalTime = () => {
     const [time, setTime] = useState(currentTime());
 
     useEffect(() => {
-        setInterval(() => {
+        const interval = setInterval(() => {
             if (time !== currentTime()) {
                 setTime(currentTime());
             }
         }, 1000);
+
+        return () => clearInterval(interval);
     });
 
-    return time;
+    return { time, currentHours: new Date().getHours() };
 };
 
 export default useLocalTime;
