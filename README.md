@@ -22,7 +22,7 @@ Expected Behaviour:
 
 ### Screenshot
 
-![](./ss.png)
+![](./SS.png)
 
 ### Links
 
