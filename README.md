@@ -9,7 +9,7 @@ Your users should be able to:
 -   [x] See hover states for all interactive elements on the page
 -   [x] View the optimal layout for the site depending on their device's screen size
 
-Expected Behaviour\*\*
+Expected Behaviour:
 
 -   [x] Change the greeting depending on the time of day. It should say:
     -   [x] -   "Good morning" between 5am and 12pm
@@ -26,8 +26,8 @@ Expected Behaviour\*\*
 
 ### Links
 
--   [Live]()
--   [Solution]()
+-   [Live](https://lonelybuddy.github.io/clock-app/)
+-   [Solution](https://www.frontendmentor.io/solutions/htmlcssscssjsreactaxio-XHoQpza7p)
 
 ### Built with
 
