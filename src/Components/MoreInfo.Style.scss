@@ -1,3 +1,5 @@
+@use '../Scss/breakpoints' as *;
+
 .more-info {
     position: fixed;
     bottom: 0;
@@ -5,13 +7,39 @@
     width: 100%;
     padding: 48px 26px;
     transition: 0.5s;
+    display: grid;
+    row-gap: 16px;
+    @include breakpoint-up(medium) {
+        grid-template-columns: 383px 1fr;
+        padding: 119px 0 119px 64px;
+        row-gap: 48px;
+        grid-template-areas:
+            'timeZone dayWeek'
+            'dayYear  weekNumber';
+
+        & > div:nth-child(1) {
+            grid-area: timeZone;
+        }
+        & > div:nth-child(2) {
+            grid-area: dayYear;
+        }
+        & > div:nth-child(3) {
+            grid-area: dayWeek;
+        }
+        & > div:nth-child(4) {
+            grid-area: weekNumber;
+        }
+    }
+    @include breakpoint-up(large) {
+        grid-template-columns: 1fr 1fr;
+        padding: 74px 165px;
+    }
 
     & > * {
         display: flex;
         justify-content: space-between;
-
-        &:not(:last-child) {
-            margin-bottom: 16px;
+        @include breakpoint-up(medium) {
+            flex-direction: column;
         }
     }
 
@@ -20,12 +48,28 @@
         line-height: 28px;
         letter-spacing: 2px;
         text-transform: uppercase;
+        @include breakpoint-up(medium) {
+            font-size: 13px;
+            letter-spacing: 2.6px;
+        }
+        @include breakpoint-up(large) {
+            font-size: 15px;
+            letter-spacing: 3px;
+        }
     }
 
     &__detail {
         font-size: 20px;
         line-height: 24px;
         font-weight: bold;
+        @include breakpoint-up(medium) {
+            font-size: 40px;
+            line-height: 48px;
+        }
+        @include breakpoint-up(large) {
+            font-size: 56px;
+            line-height: 68px;
+        }
     }
 }
 

@@ -11,6 +11,7 @@
         font-size: 15px;
         line-height: 25px;
         letter-spacing: 3px;
+        white-space: nowrap;
 
         &-icon {
             margin-right: 16px;
@@ -35,5 +36,11 @@
         font-size: 15px;
         line-height: 28px;
         letter-spacing: 3px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .show-rest {
+        display: none;
     }
 }

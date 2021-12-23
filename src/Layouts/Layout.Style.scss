@@ -1,9 +1,10 @@
+@use '../Scss/breakpoints' as *;
+
 .wrapper {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    // transform: translateY(-50%);
     transition: 0.5s;
 }
 
@@ -12,4 +13,8 @@
     margin-left: 25px;
     margin-bottom: 40px;
     transition: 0.5s;
+    @include breakpoint-up(medium) {
+        margin-left: 64px;
+        margin-bottom: 64px;
+    }
 }

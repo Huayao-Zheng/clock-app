@@ -13,14 +13,18 @@ const Layout = () => {
     const [showMore, setShowMore] = useState(false);
     const { worldTime } = useWolrdTime();
     const { time, currentHours } = useLocalTime();
-    const heightOfMoreInfo = document.querySelector('.more-info').clientHeight;
+    const heightOfMoreInfo = document.querySelector('.more-info');
 
     return (
         <>
             <BGImage currentHours={currentHours} />
             <div
                 className="wrapper"
-                style={showMore ? { transform: `translateY(-${heightOfMoreInfo}px)` } : { transform: 'translateY(0)' }}
+                style={
+                    showMore
+                        ? { transform: `translateY(-${heightOfMoreInfo.clientHeight}px)` }
+                        : { transform: 'translateY(0)' }
+                }
             >
                 <Quote />
                 <div className="time-button-wrapper">
