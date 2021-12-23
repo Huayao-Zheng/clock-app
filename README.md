@@ -34,6 +34,7 @@ Expected Behaviour\*\*
 -   HTML5
 -   CSS3
 -   Sass
+-   React
 
 ## Author
 

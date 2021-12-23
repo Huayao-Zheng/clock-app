@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 const API_KEY = process.env.REACT_APP_FREEGEOIP_API_KEY;
 const GEO_IP_URL = `https://api.freegeoip.app/json/?apikey=${API_KEY}`;
-const WORLD_TIME_BY_IP_URL = 'http://worldtimeapi.org/api/ip';
+const WORLD_TIME_BY_IP_URL = 'https://worldtimeapi.org/api/ip';
 
 const useWolrdTime = () => {
     const [worldTime, setWorldTime] = useState(null);
