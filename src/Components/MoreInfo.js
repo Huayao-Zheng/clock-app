@@ -28,6 +28,8 @@ const MoreInfo = ({ worldTime, currentHours, showMore }) => {
                 <label>Week number</label>
                 <div className="more-info__detail ">{worldTime.week_number}</div>
             </div>
+
+            <div className={`vertical-line ${isDayTime ? 'night' : 'day'}`}></div>
         </div>
     );
 };

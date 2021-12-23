@@ -1,9 +1,14 @@
+@use '../Scss/breakpoints' as *;
+
 .world-time {
     width: 308px;
     margin-bottom: 48px;
     display: grid;
     gap: 16px;
     text-transform: uppercase;
+    @include breakpoint-up(large) {
+        margin-bottom: 0;
+    }
 
     &__greeting {
         display: inline-flex;
@@ -12,6 +17,11 @@
         line-height: 25px;
         letter-spacing: 3px;
         white-space: nowrap;
+        @include breakpoint-up(large) {
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: 4px;
+        }
 
         &-icon {
             margin-right: 16px;
@@ -24,18 +34,32 @@
         line-height: 100px;
         letter-spacing: -2.5px;
         margin-right: 13px;
+        @include breakpoint-up(large) {
+            font-size: 200px;
+            line-height: 200px;
+            letter-spacing: -5px;
+        }
     }
 
     &__time-zone-abbreviation {
         font-weight: 300;
         font-size: 15px;
         line-height: 28px;
+        @include breakpoint-up(large) {
+            font-size: 40px;
+            line-height: 28px;
+        }
     }
 
     &__location {
         font-size: 15px;
         line-height: 28px;
         letter-spacing: 3px;
+        @include breakpoint-up(large) {
+            font-size: 24px;
+            line-height: 28px;
+            letter-spacing: 4.8px;
+        }
     }
 }
 

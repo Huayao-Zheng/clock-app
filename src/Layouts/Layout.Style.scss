@@ -17,4 +17,10 @@
         margin-left: 64px;
         margin-bottom: 64px;
     }
+    @include breakpoint-up(large) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: auto 165px 56px 165px;
+    }
 }
